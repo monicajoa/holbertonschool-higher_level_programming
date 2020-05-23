@@ -68,10 +68,10 @@ Test_11: One integer (paramether):
     99
 
 Test_12: Infinity paramether:
-	>>> add_integer(2, float('inf'))
+	>>> add_integer(3, float('inf'))
 	Traceback (most recent call last):
 	  ...
-	TypeError: b must be an integer
+	OverflowError: cannot convert float infinity to integer
 
 Test_13: Negative Infinity paramether:
 	>>> add_integer(float('-inf'), 5)
@@ -83,7 +83,7 @@ Test_14: Non a Number (NaN) paramether:
 	>>> add_integer(2, float('NaN'))
 	Traceback (most recent call last):
 	  ...
-	TypeError: b must be an integer
+	ValueError: cannot convert float NaN to integer
 
 
 Non Numbers

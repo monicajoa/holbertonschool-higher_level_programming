@@ -11,77 +11,97 @@ This function adds 2 integers or floats
         TypeError: if b is not a float or an int
     Returns:
         Integer with the addition of a and b
+
+
 	Import `add_integer` from the file `0-add_integer.py`:
     >>> add_integer = __import__("0-add_integer").add_integer
 
 Numbers
 ===============================
 
-Two positive integers:
+Test_1: Two positive integers:
     >>> add_integer(50,15)
     65
 
-One negative integer (b):
+Test_2: One negative integer (b):
     >>> add_integer(23, -12)
     11
 
-One negative integer (a):
+Test_3: One negative integer (a):
     >>> add_integer(-33, 9)
     -24
 
-Two negative integers:
+Test_4: Two negative integers:
     >>> add_integer(-4, -7)
     -11
 
-One posive float (a):
+Test_5: One posive float (a):
     >>> add_integer(5.32546213, 6)
     11
 
-One posive float (b):
+Test_6: One posive float (b):
     >>> add_integer(2, 1.657)
     3
 
-Two positive floats:
+Test_7: Two positive floats:
     >>> add_integer(8.2536, 17.65)
     25
 
-Two negative floats:
+Test_8: Two negative floats:
     >>> add_integer(-9.76, -23.65)
     -32
 
-One complex (a):
+Test_9: One complex (a):
     >>> add_integer(13j, 4.65)
     Traceback (most recent call last):
       ...
     TypeError: a must be an integer
 
-One complex (b):
+Test_10: One complex (b):
     >>> add_integer(2, 7j)
     Traceback (most recent call last):
       ...
     TypeError: b must be an integer
 
-One integer (paramether):
+Test_11: One integer (paramether):
     >>> add_integer(1)
     99
+
+Test_12: Infinity paramether:
+	>>> add_integer(2, float('inf'))
+	Traceback (most recent call last):
+	  ...
+	TypeError: b must be an integer
+
+Test_13: Negative Infinity paramether:
+	>>> add_integer(float('-inf'), 5)
+	Traceback (most recent call last):
+	  ...
+	OverflowError: cannot convert float infinity to integer
+
+Test_14: Non a Number (NaN) paramether:
+	>>> add_integer(2, float('NaN'))
+	Traceback (most recent call last):
+	  ...
+	TypeError: b must be an integer
 
 
 Non Numbers
 ===============================
 
-One string (a):
+Test_15: One string (a):
     >>> add_integer("love", 23)
     Traceback (most recent call last):
       ...
     TypeError: a must be an integer
 
-One bool (b):
+Test_16: One bool (b):
     >>> add_integer(69, True)
     Traceback (most recent call last):
       ...
     TypeError: b must be an integer
 
-Without paramether:
+Test_17: Without paramether:
     >>> add_integer()
     Traceback (most recent call last):
       ...

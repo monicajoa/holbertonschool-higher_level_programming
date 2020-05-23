@@ -1,0 +1,97 @@
+#2-matrix_divided.txt
+===============================
+    Tests using matrix divided
+===============================
+This function divides all elements of a matrix
+    Paramethers:
+        matrix: list of lists of integers or floats
+        div: number that divide all elements of a matrix
+    Errors:
+        TypeError: if matrix is not list
+        TypeError: if the elements of the matrix are not 
+        a list
+        TypeError: if any elements of the matrix is not
+        a integer or float
+        TypeError: if each row of the matrix is not the
+        same size
+        ZeroDivisionError: div can’t be equal to 0
+    Returns:
+        A new matrix with all elements divided by div
+
+
+    Import `matrix_divided` from the file `2-matrix_divided.py`:
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+    
+Numbers
+===============================
+
+>>> a_matrix = [[1, 2, 3], [4, 5, 6]]
+>>> b_matrix = [[2.34, 2, 1.5], [4, 4.66, 7.56]]
+>>> c_matrix = [[-2.3, -6, 1.5], [4, 6, -7.56]]
+>>> d_matrix = [["n", 2, 3], [4, "m", 6]]
+>>> e_matrix = [[2, 3], [4, 5, 6]]
+
+
+A matrix of integers divided by an integer:
+    >>> matrix_divided(a_matrix, 2)
+    [[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+
+A matrix of integers and floats divided by an integer:
+    >>> matrix_divided(b_matrix, 5)
+    [[0.47, 0.4, 0.3], [0.8, 0.93, 1.51]]
+
+A matrix of integers and floats divided by a float:
+    >>> matrix_divided(b_matrix, 3.2)
+    [[0.73, 0.62, 0.47], [1.25, 1.46, 2.36]]
+
+A matrix of integers and floats divided by a negative integer:
+    >>> matrix_divided(b_matrix, -2)
+    [[-1.17, -1.0, -0.75], [-2.0, -2.33, -3.78]]
+
+A matrix is a integer:
+    >>> matrix_divided(9, 4)
+    Traceback (most recent call last):
+      ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+A matrix divided by zero:
+    >>> matrix_divided(a_matrix, 0)
+    Traceback (most recent call last):
+      ...
+    ZeroDivisionError: division by zero
+
+A matrix with different len in rows:
+    >>> matrix_divided(e_matrix, 4)
+    Traceback (most recent call last):
+      ...
+    TypeError: Each row of the matrix must have the same size
+
+A matrix that is a list:
+    >>> matrix_divided([6, 5, 2], 3)
+    Traceback (most recent call last):
+      ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+No Numbers
+===============================
+
+An empty matrix:
+    >>> matrix = [[]]
+    >>> matrix_divided(matrix, 7)
+    Traceback (most recent call last):
+      ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+    
+A matrix with a string divided by an integer:
+    >>> matrix_divided(d_matrix, 3)
+    Traceback (most recent call last):
+      ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+A matrix divided by string:
+    >>> matrix_divided(a_matrix, "c")
+    Traceback (most recent call last):
+      ...
+    TypeError: div must be a number

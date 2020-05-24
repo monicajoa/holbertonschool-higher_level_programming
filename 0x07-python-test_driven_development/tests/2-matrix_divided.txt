@@ -48,35 +48,58 @@ Test_3: A matrix of integers and floats divided by a float:
     >>> matrix_divided(b_matrix, 3.2)
     [[0.73, 0.62, 0.47], [1.25, 1.46, 2.36]]
 
-Test_4: A matrix of integers and floats divided by a negative integer:
+Test_4: A matrix with negative values divided by a negative float:
+		>>> matrix_1 = [[-5, 2, -9], [1, -7, 2]]
+		>>> matrix_divided(matrix_1, -4.2)
+		[[1.19, -0.48, 2.14], [-0.24, 1.67, -0.48]]
+
+Test_5: A matrix of integers and floats divided by a negative integer:
     >>> matrix_divided(b_matrix, -2)
     [[-1.17, -1.0, -0.75], [-2.0, -2.33, -3.78]]
 
-Test_5: A matrix is a integer:
+Test_6: A matrix is a integer:
     >>> matrix_divided(9, 4)
     Traceback (most recent call last):
       ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-Test_6: A matrix divided by zero:
+Test_7: A matrix divided by zero:
     >>> matrix_divided(a_matrix, 0)
     Traceback (most recent call last):
       ...
     ZeroDivisionError: division by zero
 
-Test_7: A matrix with different len in rows:
+Test_8: A matrix with different len in rows:
     >>> matrix_divided(e_matrix, 4)
     Traceback (most recent call last):
       ...
     TypeError: Each row of the matrix must have the same size
 
-Test_8: A matrix that is a list:
+Test_9: A matrix with empty row:
+	>>> matrix_2 = [[7, 3, 1], [], [5, 8, 2]]
+	>>> matrix_divided(matrix_2, 3)
+	Traceback (most recent call last):
+	  ...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test_10: A matrix with one element:
+	>>> matrix_divided([[21]],2)
+	[[10.5]]
+
+Test_11: A matrix that is a list:
     >>> matrix_divided([6, 5, 2], 3)
     Traceback (most recent call last):
       ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-Test_9: Matrix divided by a infinity:
+Test_12: A matrix with a that is a tuple:
+	>>> matrix_3 = [[6, 7, 3], (8, 1, 4)]
+	>>> matrix_divided(matrix_3, 2)
+	Traceback (most recent call last):
+	  ...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test_13: Matrix divided by a infinity:
 	>>> matrix_divided(a_matrix, float('inf'))
 	[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
 
@@ -84,33 +107,33 @@ Test_9: Matrix divided by a infinity:
 No Numbers
 ===============================
 
-Test_10: An empty matrix:
+Test_14: An empty matrix:
     >>> matrix = [[]]
     >>> matrix_divided(matrix, 7)
     Traceback (most recent call last):
       ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
     
-Test_11: A matrix with a string divided by an integer:
+Test_15: A matrix with a string divided by an integer:
     >>> matrix_divided(d_matrix, 3)
     Traceback (most recent call last):
       ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-Test_12: A matrix divided by string:
+Test_16: A matrix divided by string:
     >>> matrix_divided(a_matrix, "c")
     Traceback (most recent call last):
       ...
     TypeError: div must be a number
 
-Test_13: Elementes of matrix are infinities and NaN:
+Test_17: Elementes of matrix are infinities and NaN:
     >>> matrix_divided(f_matrix, 3)
     [[0.33, inf, 2.67], [nan, 1.67, 1.33]]
 
-Test_14: Matrix divided by NaN:
+Test_18: Matrix divided by NaN:
     >>> matrix_divided(a_matrix, float('NaN'))
     [[nan, nan, nan], [nan, nan, nan]]
 
-Test_15: Matrix and Div are NaN/Infinity:
+Test_19: Matrix and Div are NaN/Infinity:
 	>>> matrix_divided(f_matrix, float('inf'))
 	[[0.0, nan, 0.0], [nan, 0.0, 0.0]]

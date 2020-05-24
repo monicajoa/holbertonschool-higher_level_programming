@@ -22,6 +22,7 @@ def matrix_divided(matrix, div):
     Returns:
         A new matrix with all elements divided by div
     """
+    
     str_error = "matrix must be a matrix (list of lists) of integers/floats"
     if not matrix:
         raise TypeError(str_error)

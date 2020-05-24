@@ -1,7 +1,9 @@
 #0-add_integer.txt
+
 ===============================
     Tests using Add Integer
 ===============================
+
 This function adds 2 integers or floats
     Paramethers:
         a (float, int): The first value

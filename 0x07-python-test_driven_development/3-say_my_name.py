@@ -8,8 +8,8 @@ def say_my_name(first_name, last_name=""):
     """
     This function prints the first and the last name
     Paramethers:
-        first_name:the first name
-        last_Name: The last name
+        first_name: The first name
+        last_name: The last name
     Errors:
         TypeError: first_name must be a string
         TypeError: last_name must be a string

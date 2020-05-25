@@ -1,0 +1,57 @@
+#3-say_my_name.txt
+
+===============================
+    Tests using print my name
+===============================
+
+This function prints the first and the last name
+    Paramethers:
+        first_name: The first name
+        last_name: The last name
+    Errors:
+        TypeError: first_name must be a string
+        TypeError: last_name must be a string
+    Returns:
+        Nothing
+
+
+    Import `say_my_name` from the file `3-say_my_name.py`:
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+
+Numbers
+===============================
+
+Test_1: First_name as integer:
+    >>> say_my_name(25, "Stewar")
+    Traceback (most recent call last):
+      ...
+    TypeError: first_name must be a string
+
+Test_2: last_name as integer:
+    >>> say_my_name("Tom", 2)
+    Traceback (most recent call last):
+      ...
+    TypeError: last_name must be a string
+
+
+No Numbers
+===============================
+
+Test_3: Strings in first_name and last_name:
+    >>> say_my_name("Robert", "Pattinson")
+    My name is Robert Pattinson
+
+Test_4: Empty String in first_name:
+    >>> say_my_name("", "Quinchia")
+    My name is  Quinchia
+
+Test_5: Empty String in last_name:
+    >>> say_my_name("Aldo", "")
+    My name is Aldo 
+
+Test_6: Function without Paramethers:
+    >>> say_my_name()
+    Traceback (most recent call last):
+      ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'

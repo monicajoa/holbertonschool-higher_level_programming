@@ -5,34 +5,34 @@ that defines a rectangle
 
 
 class Rectangle:
-    """Class that defines a rectangle (area and parameter)
+    """class that defines a rectangle (area and perimeter)
     """
-
     def __init__(self, width=0, height=0):
         """Initialize the object
-                Keyword Arguments:
-                        width {int} -- rectangle width (default: {0})
-                        height {int} -- rectangle height (default: {0})
-                """
+
+        Keyword Arguments:
+            width {int} -- rectangle width (default: {0})
+            height {int} -- rectangle height (default: {0})
+        """
         self.width = width
         self.height = height
 
     @property
     def width(self):
-        """Width value Getter
+        """width getter
         """
-        return self.__width
+        return(self.__width)
 
     @width.setter
     def width(self, value):
         """width setter
         Arguments:
-                value {[int]} -- Rectangle width
+            value {[int]} -- rectangle width
         Raises:
-                TypeError: width must be an integer
-                ValueError: width must be >= 0
+            TypeError: width must be an integer
+            ValueError: width must be >= 0
         """
-        if type(value) != int:
+        if type(value) is not int:
             raise TypeError("width must be an integer")
         elif value < 0:
             raise ValueError("width must be >= 0")
@@ -43,18 +43,18 @@ class Rectangle:
     def height(self):
         """height getter
         """
-        return self.__height
+        return(self.__height)
 
     @height.setter
     def height(self, value):
         """height setter
         Arguments:
-                value {[int]} -- Rectangle height
+            value {[int]} -- rectangle height
         Raises:
-                TypeError: height must be an integer
-                ValueError: height must be >= 0
+            TypeError: height must be an integer
+            ValueError: height must be >= 0
         """
-        if type(value) != int:
+        if type(value) is not int:
             raise TypeError("height must be an integer")
         elif value < 0:
             raise ValueError("height must be >= 0")

@@ -5,7 +5,7 @@ that defines a rectangle
 
 
 class Rectangle:
-    """class that defines a rectangle
+    """class that defines a rectangle (width and height)
     """
     def __init__(self, width=0, height=0):
         """Initialize the object
@@ -26,10 +26,8 @@ class Rectangle:
     @width.setter
     def width(self, value):
         """width setter
-
         Arguments:
             value {[int]} -- rectangle width
-
         Raises:
             TypeError: width must be an integer
             ValueError: width must be >= 0
@@ -50,10 +48,8 @@ class Rectangle:
     @height.setter
     def height(self, value):
         """height setter
-
         Arguments:
             value {[int]} -- rectangle height
-
         Raises:
             TypeError: height must be an integer
             ValueError: height must be >= 0

@@ -95,6 +95,11 @@ class Rectangle:
             return (str_temp[:-1])
 
     def __repr__(self):
+        """representation of rectangle as an instance
+
+        Returns:
+            [str] -- str as an instance
+        """
         a = str(self.width)
         b = str(self.height)
         return ("Rectangle(" + a + ", " + b + ")")

@@ -1,21 +1,28 @@
 #!/usr/bin/python3
-"""This module hold a class
-that defines a rectangle
+"""Module with Rectangle class
 """
 
 
 class Rectangle:
-    """Class that defines a rectangle (area and parameter)
+    """Class that defines a rectangle
+           Properties : width, height
+           Methods: Area, Perimeter
+           Print the Rectangle Feature
+           Repr Rectangle Feature
+           Del Instance Feature
+           Class instance counter
     """
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
-        """Initialize the object
+        """Initializer
                 Keyword Arguments:
                         width {int} -- rectangle width (default: {0})
                         height {int} -- rectangle height (default: {0})
                 """
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -73,23 +80,35 @@ class Rectangle:
         Returns:
             [int] -- Rectangle perimeter
         """
-        if self.width is 0 or self.height is 0:
+        if self.width == 0 or self.height == 0:
             return 0
         else:
             return ((self.width + self.height) * 2)
 
     def __str__(self):
-        if self.__width == 0 or self.__height == 0:
-            return ""
-        string = ""
-        for i in range(self.__height):
-            string += "\n"
-            for j in range(self.__width):
-                string += "#"
-        return string[1:]
+        """Representation of the rectangle with # character
+        Returns:
+            [list] -- String representation of the rectangle
+        """
+        rectangle_print = ""
+        if self.width == 0 or self.height == 0:
+            return rectangle_print
+        else:
+            for i in range(self.height):
+                for j in range(self.width):
+                    rectangle_print += "#"
+                rectangle_print += "\n"
+            return rectangle_print[:-1]
 
     def __repr__(self):
-        return "Rectangle({}, {})".format(self.__width, self.__height)
+        """Rectangle Representation
+        Returns:
+            [str] -- representation of the rectangle to recreate a new instance
+        """
+        wi = str(self.width)
+        he = str(self.height)
+        repr_str = "Rectangle(" + wi + ", " + he + ")"
+        return repr_str
 
     def __del__(self):
         """Deletes an instance of Rectangle

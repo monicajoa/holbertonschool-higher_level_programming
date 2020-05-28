@@ -70,3 +70,8 @@ Text_4: Check text = "My.?cat:.is thanos!"
 
 Test_5: Without arguments:
     >>> text_indentation("")
+
+Test_6: Bool in tex:
+    >>> text_indentation(True)
+      ...Traceback (most recent call last):
+    TypeError: text must be a string

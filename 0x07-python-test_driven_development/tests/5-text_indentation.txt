@@ -1,0 +1,72 @@
+#5-text_indentation.txt
+
+=================================
+    Tests using text_indentation
+=================================
+
+This function prints a text with 2 new lines
+after each of these characters: ., ? and :
+
+    Arguments:
+        text {[str]} -- string to check
+
+    Raises:
+        TypeError: text must be a string
+
+
+    Import `text_indentation` from `5-text_indentation.py`:
+ >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+
+ Numbers
+===============================
+
+Test_1: Check the data type:
+    >>> text_indentation(69)
+    Traceback (most recent call last):
+      ...
+    TypeError: text must be a string
+
+
+ No Numbers
+===============================
+
+Test_2: Without characters (".", ":", "?"):
+    >>> text_indentation("Colors!")
+    Colors!
+
+Test_3: Check if string has characters (".", ":", "?"):
+    >>> text_indentation("text... text?? .text ?text :text")
+    text.
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    text?
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    text ?
+    <BLANKLINE>
+    text :
+    <BLANKLINE>
+    text
+
+Text_4: Check text = "My.?cat:.is thanos!"
+    >>> a = "My.?cat:.is thanos!"
+    >>> text_indentation(a)
+    My.
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    cat:
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    is thanos!
+
+Test_5: Without arguments:
+    >>> text_indentation("")

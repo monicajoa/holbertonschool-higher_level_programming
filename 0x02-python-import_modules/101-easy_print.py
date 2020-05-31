@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-import sys
+from sys import stdout
 
-print("#pythoniscool", file=sys.stdout)
+print("#pythoniscool", file=stdout)

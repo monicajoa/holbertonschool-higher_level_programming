@@ -77,3 +77,27 @@ Test_10: Test area method
     Traceback (most recent call last):
       ...
     Exception: area() is not implemented
+
+Test_11: Value is bool
+    >>> bg. integer_validator("Hello", True)
+    Traceback (most recent call last):
+      ...
+    TypeError: Hello must be an integer
+
+Test_12: Value is a tuple
+    >>> bg. integer_validator("Hello", (6, 7, 8, 9))
+    Traceback (most recent call last):
+      ...
+    TypeError: Hello must be an integer
+
+Test_13: Value is None
+    >>> bg. integer_validator("Hello", None)
+    Traceback (most recent call last):
+      ...
+    TypeError: Hello must be an integer
+
+Test_14: Value is a set
+    >>> bg. integer_validator("Hello", {0,1,2,3,4,5,6,7,8,9})
+    Traceback (most recent call last):
+      ...
+    TypeError: Hello must be an integer

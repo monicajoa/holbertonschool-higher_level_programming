@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-    """This module holds a function that returns the list 
+"""This module holds a function that returns the list
     of available attributes and methods of an object
     """
 
 
 def lookup(obj):
-    """function that returns the list 
+    """function that returns the list
     of available attributes and methods of an object
 
     Arguments:

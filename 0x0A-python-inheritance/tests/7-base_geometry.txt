@@ -1,0 +1,79 @@
+#7- base_geometry.txt
+
+====================================
+    Tests using integer validator
+====================================
+
+Public instance method, that check value
+
+    Arguments:
+        name {[str]} -- instance name
+        value {[int]} -- instance value
+
+    Raises:
+        TypeError: value must be an integer
+        ValueError: value must be greater than 0
+
+    Import `BaseGeometry` from the file `7-base_geometry.py`:
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+====================================
+
+>>> bg = BaseGeometry()
+
+Test_1: Check correct output
+    >>> bg. integer_validator("Hello", 23)
+
+Test_2: Value is a string
+    >>> bg. integer_validator("Hello", "House")
+    Traceback (most recent call last):
+      ...
+    TypeError: Hello must be an integer
+
+Test_3: Value is less zero
+    >>> bg. integer_validator("Hello", -5)
+    Traceback (most recent call last):
+      ...
+    ValueError: Hello must be greater than 0
+
+Test_4: Value is zero
+    >>> bg. integer_validator("Hello", 0)
+    Traceback (most recent call last):
+      ...
+    ValueError: Hello must be greater than 0
+
+Test_5: Value is infinite
+    >>> bg. integer_validator("Hello", float('inf'))
+    Traceback (most recent call last):
+      ...
+    TypeError: Hello must be an integer
+
+Test_6: Value is Nan
+    >>> bg. integer_validator("Hello", float('NaN'))
+    Traceback (most recent call last):
+      ...
+    TypeError: Hello must be an integer
+
+Test_7: Value is a list
+    >>> bg. integer_validator("Hello", [1, 2, 3, 4, 5])
+    Traceback (most recent call last):
+      ...
+    TypeError: Hello must be an integer
+
+Test_8: Just one paramether
+    >>> bg. integer_validator("Hello")
+    Traceback (most recent call last):
+      ...
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Test_9: Without paramethers
+    >>> bg. integer_validator()
+    Traceback (most recent call last):
+      ...
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Test_10: Test area method
+    >>> bg.area()
+    Traceback (most recent call last):
+      ...
+    Exception: area() is not implemented

@@ -34,7 +34,7 @@ Test_4: Is Subclass
     >>> issubclass(type(my_list), MyList)
     True
 
-Test_5: Negative integers
+Test_5: Mixed integers
     >>> my_list.append(-1)
     >>> my_list.append(-4)
     >>> my_list.append(-2)
@@ -42,3 +42,19 @@ Test_5: Negative integers
     >>> my_list.append(-5)
     >>> my_list.print_sorted()
     [-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]
+
+Test_6: Negative integers
+    >>> neg_list = MyList()
+    >>> neg_list.append(-3)
+    >>> neg_list.append(-11)
+    >>> neg_list.append(-23)
+    >>> neg_list.append(-69)
+    >>> neg_list.append(-20)
+    >>> neg_list.print_sorted()
+    [-69, -23, -20, -11, -3]
+
+Test_7: One element list
+    >>> single_list = MyList()
+    >>> single_list.append(30)
+    >>> single_list.print_sorted()
+    [30]

@@ -1,0 +1,44 @@
+#1- my_list.txt
+
+====================================
+    Tests using print sorted method
+====================================
+
+Prints the new list, but sorted (ascending)
+
+    Import `MyList` from the file `1-my_list.py`:
+>>> MyList = __import__('1-my_list').MyList
+
+====================================
+
+Test_1: Check printed list
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+
+ Test_2: Empty list
+    >>> empty_list = MyList()
+    >>> empty_list.print_sorted()
+    []
+
+Test_3: Is instance
+    >>> isinstance(my_list, MyList)
+    True
+
+Test_4: Is Subclass
+    >>> issubclass(type(my_list), MyList)
+    True
+
+Test_5: Negative integers
+    >>> my_list.append(-1)
+    >>> my_list.append(-4)
+    >>> my_list.append(-2)
+    >>> my_list.append(-3)
+    >>> my_list.append(-5)
+    >>> my_list.print_sorted()
+    [-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]

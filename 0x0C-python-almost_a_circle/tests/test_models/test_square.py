@@ -20,8 +20,7 @@ class Test_Square(unittest.TestCase):
         """
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/square.py'])
-        self.assertEqual(
-            result.total_errors, 0,
+        self.assertEqual(result.total_errors, 0)
 
 if __name__ == "__main__":
     unittest.main()

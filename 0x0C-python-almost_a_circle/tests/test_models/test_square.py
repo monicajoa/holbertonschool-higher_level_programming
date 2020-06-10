@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-    """Unittest for 3. Square class
+"""Unittest for 3. Square class
     """
 import unittest
 import os
@@ -15,12 +15,14 @@ class Test_Square(unittest.TestCase):
     Arguments:
         unittest {[class]} -- class with unittests for Square class
     """
+
     def test_pep8_style(self):
         """Test PEP8 style
         """
         pep8style = pep8.StyleGuide(quiet=True)
-        result = pep8style.check_files(['models/square.py'])
+        result = pep8style.check_files(["models/square.py"])
         self.assertEqual(result.total_errors, 0)
+
 
 if __name__ == "__main__":
     unittest.main()

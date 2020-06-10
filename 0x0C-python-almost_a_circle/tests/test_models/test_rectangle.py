@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-    """Unittest for 2. Rectangle class
+"""Unittest for 2. Rectangle class
     """
 import unittest
 import os
@@ -15,12 +15,14 @@ class Test_Rectangle(unittest.TestCase):
     Arguments:
         unittest {[class]} -- class with unittests for Rectangle class
     """
+
     def test_pep8_style(self):
         """Test PEP8 style
         """
         pep8style = pep8.StyleGuide(quiet=True)
-        result = pep8style.check_files(['models/rectangle.py'])
+        result = pep8style.check_files(["models/rectangle.py"])
         self.assertEqual(result.total_errors, 0)
+
 
 if __name__ == "__main__":
     unittest.main()

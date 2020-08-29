@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ What's my status? #0
-        This module holds a Python script that fetches
-        https://intranet.hbtn.io/status, using the package urllib
+    This module holds a Python script that fetches
+    https://intranet.hbtn.io/status, using the package urllib
 """
 import urllib.request
 

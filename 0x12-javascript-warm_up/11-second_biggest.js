@@ -7,6 +7,8 @@ if (args.length === 2 || args.length === 3) {
   for (let index = 2; args[index]; index++) {
     newList[index - 2] = parseInt(args[index]);
   }
-  newList.sort();
+  newList.sort(function (a, b) {
+    return a - b;
+  });
   console.log(newList[newList.length - 2]);
 }

@@ -1,22 +1,17 @@
 #!/usr/bin/node
 const request = require('request');
-const requestUrl = process.argv[2];
-request(requestUrl, function (error, response, body) {
+const numberId = '/18/';
+request(process.argv[2], function (error, response, body) {
   if (error) {
-    console.log(error);
-  } else {
-    let counter = 0;
-    const toObj = JSON.parse(body);
-    for (let i = 0; toObj.results[i]; i++) {
-      for (let j = 0; toObj.results[i].characters[j]; j++) {
-        if (
-          toObj.results[i].characters[j] ===
-          'https://swapi-api.hbtn.io/api/people/18/'
-        ) {
-          counter++;
-        }
+    console.error(error);
+  }
+  let counter = 0;
+  for (const data of JSON.parse(body).results) {
+    for (const person of data.characters) {
+      if (person.slice(-4) === numberId) {
+        counter += 1;
       }
     }
-    console.log(counter);
   }
+  console.log(counter);
 });
